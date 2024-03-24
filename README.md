@@ -20,6 +20,6 @@ The following will generate output if and only if there's an appointment free to
 
 ```bash
 export BASE_URL="https://termine.bonn.de/m/dlz/extern/calendar"
-export UID="b91bb67b-15cf-44df-ab0b-96ebe25c1ae3"
+export TENANT_UID="b91bb67b-15cf-44df-ab0b-96ebe25c1ae3"
 python smart_cjm/scraper.py --days 3 "Abmeldung" "Dienstleistungszentrum"
 ```

@@ -18,7 +18,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--debug', action='store_true')
     parser.add_argument('--base-url', default=os.getenv('BASE_URL'))
-    parser.add_argument('--uid', default=os.getenv('UID'))
+    parser.add_argument('--tenant-uid', default=os.getenv('TENANT_UID'))
     parser.add_argument(
         '--user-agent',
         default=F'{__service__}/{__version__} (python-requests {requests.__version__}) '
@@ -35,7 +35,7 @@ if __name__ == '__main__':
     logger.handlers.append(ConsoleHandler())
     logger.setLevel(logging.DEBUG if args.debug else logging.INFO)
 
-    termine = Termine(args.base_url, args.uid, args.user_agent)
+    termine = Termine(args.base_url, args.tenant_uid, args.user_agent)
     selected = [
         dienstleistung for dienstleistung in termine.get_dienstleistungen()
         if dienstleistung.caption == args.dienstleisung
