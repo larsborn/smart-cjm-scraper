@@ -19,6 +19,7 @@ The following will generate output if and only if there's an appointment free to
 "Dienstleistungszentrum" within the next 3 days:
 
 ```bash
+export PYTHONPATH=.
 export BASE_URL="https://termine.bonn.de/m/dlz/extern/calendar"
 export TENANT_UID="b91bb67b-15cf-44df-ab0b-96ebe25c1ae3"
 python smart_cjm/scraper.py --days 3 "Abmeldung" "Dienstleistungszentrum"
